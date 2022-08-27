@@ -1,0 +1,7 @@
+{
+  "name": "testing-gha",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Saul Bustamante Banos <v-sbanos@expediagroup.com>",
+  "license": "MIT"
+}
