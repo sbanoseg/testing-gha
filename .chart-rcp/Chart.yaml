@@ -1,0 +1,10 @@
+apiVersion: v2
+name: weaver-loom
+version: 0.1.184
+maintainers:
+  - name: Experience API Team
+    url: 'https://expedia.slack.com/app_redirect?channel=ask-experience-api'
+dependencies:
+  - name: paved-road-service
+    version: 7.1.0
+    repository: '@public-helm-virtual'
