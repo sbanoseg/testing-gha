@@ -3,6 +3,7 @@ name: My first gha
 on:
   push:
     branches: [ master ]
+    paths: [.chart-rcp/**]
   pull_request:
     branches: [ master ]
     paths: [.chart-rcp/**]
