@@ -5,6 +5,10 @@
   "author": "Saul Bustamante Banos <v-sbanos@expediagroup.com>",
   "license": "MIT",
   "scripts": {
-    "update:helm-chart":"node src/index.js"
+    "update:test-script": "node src/index.js",
+    "update:helm-chart": "node src/update-rcp-chart-patch-version.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
   }
 }
