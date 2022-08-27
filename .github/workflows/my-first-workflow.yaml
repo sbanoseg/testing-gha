@@ -21,5 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       
+      - name: Installing dependencies
+        run: yarn install
+
       - name: Executing a script
         run: yarn update:helm-chart
