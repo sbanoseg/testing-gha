@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Saul Bustamante Banos <v-sbanos@expediagroup.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "update:helm-chart":"node src/index.js"
+  }
 }
