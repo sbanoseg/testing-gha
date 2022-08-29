@@ -8,16 +8,17 @@ let filename = path.join(__dirname,'../.chart-rcp/Chart.yaml')
 let fileContent = fs.readFileSync(filename,'utf8');
 let data = yaml.load(fileContent)
 
-console.log(data);
+// console.log(data);
 
 let {version} = data;
+// console.log(typeof version)
 let semanticVersion = version.split('.')
-console.log(semanticVersion);
-let currentPatchVersion = parseInt(semanticVersion[2])
-console.log(currentPatchVersion);
-newPatchVersion = currentPatchVersion + 1;
-console.log(newPatchVersion);
-semanticVersion[2] = newPatchVersion
+// console.log(semanticVersion);
+let currentPatchVersion = parseInt(semanticVersion[2]);
+// console.log(currentPatchVersion);
+let newPatchVersion = currentPatchVersion + 1;
+// console.log(typeof newPatchVersion);
+semanticVersion[2] = newPatchVersion.toString();
 
 
 data.version = semanticVersion.join('.')

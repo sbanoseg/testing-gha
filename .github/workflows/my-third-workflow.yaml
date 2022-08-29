@@ -31,10 +31,10 @@ jobs:
       - name: Executing a script
         if: github.event.pull_request.merged == true
         run: yarn update:helm-chart
-      
+
       - name: Upgrading patch version
         if: github.event.pull_request.merged == true
-        uses: EndBug/add-and-commit@v9
+        uses: actions-js/push@master
         with:
-          add: '--all'
           message: 'upgrade: patch version upgrade'
+          branch: master
