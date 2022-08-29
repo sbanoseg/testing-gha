@@ -19,7 +19,15 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
-        if: github.event.pull_request.merged == false
+        if: github.event.pull_request.merged == true
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+           
+      - name: Installing dependencies
+        if: github.event.pull_request.merged == true
+        run: yarn install
+
+      - name: Executing a script
+        if: github.event.pull_request.merged == true
+        run: yarn update:helm-chart
