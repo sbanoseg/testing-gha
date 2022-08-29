@@ -38,3 +38,4 @@ jobs:
         with:
           message: 'upgrade: patch version upgrade'
           branch: master
+          github_token: ${{ github.TOKEN }}

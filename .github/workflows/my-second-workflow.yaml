@@ -36,5 +36,5 @@ jobs:
         if: github.event.pull_request.merged == true
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit-message: 'upgrade: patch version upgrade'
+          commit_message: 'upgrade: patch version upgrade'
           branch: master
