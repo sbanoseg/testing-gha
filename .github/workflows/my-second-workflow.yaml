@@ -1,4 +1,4 @@
-name: My first gha
+name: My second gha
 
 on:
   pull_request:
