@@ -1,7 +1,8 @@
 name: My first gha
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches: [ master ]
     paths: [.chart-rcp/**]
 
@@ -14,15 +15,11 @@ jobs:
 
     steps:
       - name: Set up Git repository
+        if: github.event.pull_request == true
         uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
+        if: github.event.pull_request == false
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      
-      - name: Installing dependencies
-        run: yarn install
-
-      - name: Executing a script
-        run: yarn update:helm-chart
