@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - name: Checking github value
-        run: echo "${{ github }}"
+        run: echo "${{ github.ref_name }}"
            
       # - name: Installing dependencies
       #   if: github.event.pull_request.merged == true
