@@ -24,18 +24,18 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
            
-      - name: Installing dependencies
-        if: github.event.pull_request.merged == true
-        run: yarn install
+      # - name: Installing dependencies
+      #   if: github.event.pull_request.merged == true
+      #   run: yarn install
 
-      - name: Executing a script
-        if: github.event.pull_request.merged == true
-        run: yarn update:helm-chart
+      # - name: Executing a script
+      #   if: github.event.pull_request.merged == true
+      #   run: yarn update:helm-chart
 
-      - name: Upgrading patch version
-        if: github.event.pull_request.merged == true
-        uses: actions-js/push@master
-        with:
-          message: 'upgrade: patch version upgrade'
-          branch: master
-          github_token: ${{ github.TOKEN }}
+      # - name: Upgrading patch version
+      #   if: github.event.pull_request.merged == true
+      #   uses: actions-js/push@master
+      #   with:
+      #     message: 'upgrade: patch version upgrade'
+      #     branch: master
+      #     github_token: ${{ github.TOKEN }}
