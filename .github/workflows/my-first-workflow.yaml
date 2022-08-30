@@ -26,7 +26,6 @@ jobs:
       
       - name: Checking github value
         run: echo "${{ github }}"
-        run: echo "${{ github.repository }}"
            
       # - name: Installing dependencies
       #   if: github.event.pull_request.merged == true
