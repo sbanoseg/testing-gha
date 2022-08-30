@@ -1,6 +1,6 @@
 apiVersion: v2
 name: weaver-loom
-version: 0.1.565
+version: 0.1.600
 maintainers:
   - name: Experience API Team
     url: https://expedia.slack.com/app_redirect?channel=ask-experience-api
