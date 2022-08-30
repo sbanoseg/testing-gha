@@ -1,13 +1,1 @@
-Primera linea de templates
-Segunda linea de templates
-Tercera linea de templates
-Cuarta linea de templates
-5ta linea de templates
-6ta linea de templates
-7ta liena de templates
-8va linea de templates
-9na linea de templates
-10
-11
-12
-13
+1
