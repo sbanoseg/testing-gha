@@ -25,15 +25,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - name: Printing github base ref
-        run: echo ${{ githiub.base_ref}}
+        run: echo ${{ github.base_ref}}
            
-      # - name: Installing dependencies
-      #   if: github.event.pull_request.merged == true
-      #   run: yarn install
+      - name: Installing dependencies
+        if: github.event.pull_request.merged == true
+        run: yarn install
 
-      # - name: Executing a script
-      #   if: github.event.pull_request.merged == true
-      #   run: yarn update:helm-chart
+      - name: Executing a script
+        if: github.event.pull_request.merged == true
+        run: yarn update:helm-chart
 
       # - name: Upgrading patch version
       #   if: github.event.pull_request.merged == true
