@@ -13,7 +13,7 @@ let data = yaml.load(fileContent)
 let {version} = data;
 // console.log(typeof version)
 let semanticVersion = version.split('.')
-// console.log(semanticVersion);
+console.log(semanticVersion);
 let currentPatchVersion = parseInt(semanticVersion[2]);
 // console.log(currentPatchVersion);
 let newPatchVersion = currentPatchVersion + 1;

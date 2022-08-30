@@ -23,21 +23,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      
-      - name: Checking github value
-        run: echo "${{ github }}"
            
-      # - name: Installing dependencies
-      #   if: github.event.pull_request.merged == true
-      #   run: yarn install
+      - name: Installing dependencies
+        if: github.event.pull_request.merged == true
+        run: yarn install
 
-      # - name: Executing a script
-      #   if: github.event.pull_request.merged == true
-      #   run: yarn update:helm-chart
+      - name: Executing a script
+        if: github.event.pull_request.merged == true
+        run: yarn update:helm-chart
       
-      # - name: Upgrading patch version
-      #   if: github.event.pull_request.merged == true
-      #   uses: EndBug/add-and-commit@v9
-      #   with:
-      #     add: '--all'
-      #     message: 'upgrade: patch version upgrade'
+      - name: Upgrading patch version
+        if: github.event.pull_request.merged == true
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '--all'
+          message: 'upgrade: patch version upgrade'
