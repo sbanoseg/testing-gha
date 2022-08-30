@@ -29,14 +29,23 @@ jobs:
 
       - name: Printing github workspace
         run: echo ${{ github.workspace}}
-           
-      - name: Installing dependencies
-        if: github.event.pull_request.merged == true
-        run: yarn install
 
-      - name: Executing a script
-        if: github.event.pull_request.merged == true
-        run: yarn update:helm-chart
+      - name: Get changed files using defaults
+        id: changed-files
+        uses: tj-actions/changed-files@v29.0.2
+           
+      - name: List all added files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was added"
+          done
+      # - name: Installing dependencies
+      #   if: github.event.pull_request.merged == true
+      #   run: yarn install
+
+      # - name: Executing a script
+      #   if: github.event.pull_request.merged == true
+      #   run: yarn update:helm-chart
 
       
 
