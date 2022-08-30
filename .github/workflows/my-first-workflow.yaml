@@ -14,9 +14,6 @@ jobs:
         node-version: ['14.x']
 
     steps:
-      - name: Set up Git repository
-        if: github.event.pull_request.merged == true
-        uses: actions/checkout@v2
 
       - name: Use Node.js ${{ matrix.node-version }}
         if: github.event.pull_request.merged == true
@@ -34,6 +31,10 @@ jobs:
       - name: Executing a script
         if: github.event.pull_request.merged == true
         run: yarn update:helm-chart
+
+      - name: Set up Git repository
+        if: github.event.pull_request.merged == true
+        uses: actions/checkout@v2
 
       # - name: Upgrading patch version
       #   if: github.event.pull_request.merged == true
